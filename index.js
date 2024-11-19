@@ -23,7 +23,7 @@ window.addEventListener("load", ()=>{
 function getUser(){
     //define html variable
     let html=""
-    fetch("http://localhost:5000/api/members", {mode: "cors"})
+    fetch('https://api.sampleapis.com/beers/ale', {mode: "cors"})
     .then(response=>{
         console.log(response)
         return response.json()
@@ -31,7 +31,7 @@ function getUser(){
     .then((data)=>{
         console.log(data)
         data.forEach((element)=>{
-            html += `<li>${element.first_name} ${element.last_name}</li>`
+            html += `<li>${element.price} ${element.name}</li>`
         })
         content.innerHTML = html
     })
